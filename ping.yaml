@@ -1,0 +1,9 @@
+- name: my first ping playbook
+  hosts: bjgomes
+  gather_facts: true
+
+  tasks:
+
+  - name: ping pong
+    ping:
+

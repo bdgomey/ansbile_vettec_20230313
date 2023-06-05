@@ -1,0 +1,21 @@
+- name: apache2 installation
+  hosts: bjgomes
+  gather_facts: true
+  
+
+  tasks:
+
+    - name: update apt package manager
+      apt:
+        update_cache: yes
+      become: true
+
+    - name: install apache2
+      apt:
+        name: apache2
+        state: present
+      become: true
+        
+
+
+
