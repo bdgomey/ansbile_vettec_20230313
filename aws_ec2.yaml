@@ -13,7 +13,6 @@ hostnames:
 #   prefix: bjgomes
 
 groups:
-
   bjgomes: tags.CreatedBy
 
 filters:

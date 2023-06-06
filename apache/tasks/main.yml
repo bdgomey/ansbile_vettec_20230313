@@ -1,0 +1,22 @@
+---
+# tasks file for apache
+
+- name: update apt package manager
+  apt:
+    update_cache: yes
+  become: true
+
+- name: install apache2
+  apt:
+    name: "{{ item }}"
+    state: "{{ state }}"
+  with_items:
+    - apache2
+    - git
+    - net-tools
+    - cowsay
+  become: true
+
+- name: Print the gateway for each host when defined
+  debug:
+    msg: System address is {{ ansible_default_ipv4.address }} has gateway {{ ansible_default_ipv4.gateway }}
